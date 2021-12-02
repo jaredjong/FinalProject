@@ -1,0 +1,90 @@
+@model Group12_FinalProject.Models.Property
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Property</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Zip" class="control-label"></label>
+                <input asp-for="Zip" class="form-control" />
+                <span asp-validation-for="Zip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Street" class="control-label"></label>
+                <input asp-for="Street" class="form-control" />
+                <span asp-validation-for="Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GuestRating" class="control-label"></label>
+                <input asp-for="GuestRating" class="form-control" />
+                <span asp-validation-for="GuestRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GuestsAllowed" class="control-label"></label>
+                <input asp-for="GuestsAllowed" class="form-control" />
+                <span asp-validation-for="GuestsAllowed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeekendPrice" class="control-label"></label>
+                <input asp-for="WeekendPrice" class="form-control" />
+                <span asp-validation-for="WeekendPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeekDayPrice" class="control-label"></label>
+                <input asp-for="WeekDayPrice" class="form-control" />
+                <span asp-validation-for="WeekDayPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CleaningFee" class="control-label"></label>
+                <input asp-for="CleaningFee" class="form-control" />
+                <span asp-validation-for="CleaningFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bedroom" class="control-label"></label>
+                <input asp-for="Bedroom" class="form-control" />
+                <span asp-validation-for="Bedroom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bathroom" class="control-label"></label>
+                <input asp-for="Bathroom" class="form-control" />
+                <span asp-validation-for="Bathroom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PetsAllowed" class="control-label"></label>
+                <select asp-for="PetsAllowed" class="form-control"></select>
+                <span asp-validation-for="PetsAllowed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParkingFee" class="control-label"></label>
+                <select asp-for="ParkingFee" class="form-control"></select>
+                <span asp-validation-for="ParkingFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

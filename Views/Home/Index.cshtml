@@ -1,0 +1,82 @@
+@model IEnumerable<Group12_FinalProject.Models.Property>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Property Details</h1>
+<form asp-action=”Index” asp-controller=”Home” method=”get”>
+    <p class=”form-group”>
+  
+        <a asp-action="DetailedSearch" class="btn btn-success">Detailed Search</a>
+        <a asp-action="Index" class="btn btn-danger">Show All</a>
+    </p>
+</form>
+
+<h7>Displaying @ViewBag.SelectedProperties out of @ViewBag.AllProperties properties</h7>
+
+<table class=”table”>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </th>
+            <th>.
+                @Html.DisplayNameFor(model => model.WeekendPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeekDayPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bedroom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bathroom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GuestRating)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeekendPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeekDayPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bedroom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bathroom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GuestRating)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.PropertyID">Details</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+

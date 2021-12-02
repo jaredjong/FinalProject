@@ -1,0 +1,38 @@
+﻿@model ChangeStreetAddressViewModel
+
+@{
+    ViewData["Title"] = "Change Street Address";
+}
+
+<h1>Change Street Address</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ChangePassword" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OldStreetAddress" class="control-label"></label>
+                <input asp-for="OldStreetAddress" class="form-control" />
+                <span asp-validation-for="OldStreetAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewStreetAddress" class="control-label"></label>
+                <input asp-for="NewStreetAddress" class="form-control" />
+                <span asp-validation-for="NewStreetAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmStreetAddress" class="control-label"></label>
+                <input asp-for="ConfirmStreetAddress" class="form-control" />
+                <span asp-validation-for="ConfirmStreetAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Change Street Address" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to Home</a>
+</div>

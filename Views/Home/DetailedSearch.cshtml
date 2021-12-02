@@ -1,0 +1,77 @@
+﻿@model PropertySearchViewModel
+
+@{
+    ViewData["Title"] = "DetailedSearch";
+}
+
+<h1>Detailed Search</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DisplaySearchResults" method="get">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SearchCity" type="number " class="control-label"></label>
+                <input asp-for="SearchCity" class="form-control" />
+                <span asp-validation-for="SearchCity" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SearchState" type="number " class="control-label"></label>
+                <input asp-for="SearchState" class="form-control" />
+                <span asp-validation-for="SearchState" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="SearchGuestsAllowed" class="control-label"></label>
+                <input asp-for="SearchGuestsAllowed" class="form-control" />
+                <span asp-validation-for="SearchGuestsAllowed" class="text-danger"></span>
+            </div>
+
+
+
+            <label asp-for="SelectedCategoryID" class="control-label"></label>
+            @Html.DropDownListFor(model => model.SelectedCategoryID, (SelectList)ViewBag.AllCategories, new { @class = "form-control" })
+
+            <div class="form-group">
+                <label asp-for="SearchBathroom" class="control-label"></label>
+                <input asp-for="SearchBathroom" class="form-control" />
+                <span asp-validation-for="SearchBathroom" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SearchBedroom" class="control-label"></label>
+                <input asp-for="SearchBedroom" class="form-control" />
+                <span asp-validation-for="SearchBedroom" class="text-danger"></span>
+            </div>
+
+
+            <label asp-for="SelectedPetsAllowed" class="control-label"></label><br />
+
+            <input type="radio" class="radio" asp-for="SelectedPetsAllowed" value="@petsAllowed.Yes" /> Yes<br />
+            <input type="radio" class="radio" asp-for="SelectedPetsAllowed" value="@petsAllowed.No" /> No<br />
+
+
+            <label asp-for="SelectedFreeParking" class="control-label"></label><br />
+
+            <input type="radio" class="radio" asp-for="SelectedFreeParking" value="@parkingfee.Yes" /> Yes<br />
+            <input type="radio" class="radio" asp-for="SelectedFreeParking" value="@parkingfee.No" /> No<br />
+
+
+
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

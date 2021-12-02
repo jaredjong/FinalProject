@@ -1,0 +1,67 @@
+@model IEnumerable<Group12_FinalProject.Models.ReservationDetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationDetailID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StayPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberofDays)
+            </th>
+         
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationDetailID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StayPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberofDays)
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReservationDetailID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReservationDetailID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReservationDetailID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
